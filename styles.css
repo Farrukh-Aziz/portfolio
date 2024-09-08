@@ -1,0 +1,291 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.header {
+    display: flex;
+    justify-content: center; /* Center the name */
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    position: relative; /* To position the contact details absolutely */
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 70px; /* Increase the font size */
+    color: #f39c12;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header-right {
+    position: absolute;
+    right: 20px; /* Position the contact details on the right */
+    top: 20px;
+}
+
+.header-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.header-right li {
+    margin: 5px 0;
+    color: #e67e22; /* Different color for the contact details */
+    font-size: 18px; /* Ensure the text size is consistent */
+}
+
+.header-right li:not(:last-child) {
+    border-bottom: 1px solid #333; /* Optional: Add a subtle line between items */
+    padding-bottom: 5px;
+}
+
+.intro-box {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    background-color: #222;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.intro-box h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #e67e22;
+}
+
+.intro-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align to the left side */
+    align-items: center;
+    margin: 50px 0;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding for a smaller size */
+    background-color: #4CAF50; /* Or any color you prefer */
+    color: white;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    width: auto; /* Set width to auto to fit content, or set a specific value like 150px */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
+.bubble:nth-child(2n) {
+    background-color: #e67e22;
+}
+
+.bubble:nth-child(2n+1) {
+    background-color: #e74c3c;
+}
+
+/* Force the bubbles to split into two lines */
+.skills-container .bubble:nth-child(-n+3) {
+    width: calc(100% / 3 - 20px); /* 3 bubbles in the top line */
+}
+
+.skills-container .bubble:nth-child(n+4) {
+    width: calc(100% / 3 - 20px); /* 3 bubbles in the bottom line */
+}
+
+/* Floating Contact Boxes */
+.contact-container {
+    position: relative;
+    margin-top: 30px;
+}
+
+.contact-box {
+    width: 220px; /* Reduced width */
+    padding: 15px;
+    background-color: #333;
+    color: #f39c12;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    right: 5%;
+    animation: floatRight 1s ease-in-out forwards;
+}
+
+.contact-box:nth-child(1) {
+    top: 0;
+    animation-delay: 0.3s;
+}
+
+.contact-box:nth-child(2) {
+    top: 70px;
+    animation-delay: 0.6s;
+}
+
+.contact-box:nth-child(3) {
+    top: 140px;
+    animation-delay: 0.9s;
+}
+
+.contact-box:nth-child(4) {
+    top: 210px;
+    animation-delay: 1.2s;
+}
+
+/* Animation for Floating Boxes */
+@keyframes floatRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.experience, .projects, .education, .certifications {
+    padding: 40px;
+    background-color: #222;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+}
+
+.experience h2, .projects h2, .education h2, .certifications h2 {
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.experience p, .projects ul, .education p, .certifications ul {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+@keyframes floatIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.bubble {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    width: auto;
+    font-size: 14px;
+    opacity: 0; /* Start invisible */
+    animation: floatIn 1s ease-out forwards; /* Apply the animation */
+    animation-delay: 0.5s; /* Delay the start for a more dramatic effect */
+}
+
+.bubble:nth-child(2) {
+    animation-delay: 1s; /* Delay each bubble */
+}
+
+.bubble:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Add more delays if you have more skill bubbles */
+
+.detail {
+   padding-left: 3%;
+   font-family: "Times New Roman", Times, serif;
+   color: #f39c12;
+}
+
+.intro {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contact-box {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.intro-box {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-left h1 {
+        font-size: 50px;
+    }
+    
+    .header-right {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .intro-box {
+        width: 80%;
+    }
+    
+    .skills-container .bubble {
+        width: calc(100% / 2 - 20px); /* Adjust to fit 2 bubbles per row */
+    }
+    
+    .contact-box {
+        right: 2%;
+        width: 90%;
+        position: relative;
+        margin: 10px auto;
+    }
+    
+    .experience, .projects, .education, .certifications {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left h1 {
+        font-size: 40px;
+    }
+    
+    .intro-box {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .skills-container .bubble {
+        width: 100%; /* One bubble per row */
+        text-align: center;
+    }
+    
+    .contact-box {
+        right: 0;
+        width: 100%;
+    }
+    
+    .experience, .projects, .education, .certifications {
+        padding: 10px;
+    }
+}
